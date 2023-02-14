@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+
+  @media screen and (max-width: 700px) {
+    text-align: center;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-button {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.384);
+  border-radius: 50px;
+}
+
+body {
+  /*  background-color: rgb(32, 32, 32); */
+  background-color: rgb(33, 76, 105);
+
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.541);
+    color: aliceblue;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 25px;
+    }
+  }
+
+  .app {
+    display: block;
+    height: 60vh;
+    width: 60%;
+    margin: 80px auto 10px auto;
+    padding: 20px;
+    overflow-y: scroll;
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
+
+    article {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.384);
+      padding: 10px;
+      color: aliceblue;
+      border-radius: 5px;
+      margin: 10px 0;
+
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+        gap: 15px 0;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 10px;
+      }
+
+      p {
+        cursor: pointer;
+      }
+
+      input[type='checkbox'] {
+        cursor: pointer;
+      }
+
+      input {
+        padding: 8px;
+        border-radius: 5px;
+      }
+    }
+
+    form {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      gap: 10px;
+
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      span {
+        position: relative;
+        top: 50px;
+        left: 22%;
+        color: aliceblue;
+
+        @media screen and (max-width: 600px) {
+          position: initial;
+        }
+      }
+
+      input {
+        padding: 8px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
