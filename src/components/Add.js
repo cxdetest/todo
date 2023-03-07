@@ -18,7 +18,7 @@ const Add = ({ edit, setView, id, setID }) => {
       const { title, description } = result[0];
       setTodo({ title, description });
     }
-  }, []);
+  }, [id, state]);
 
   function handleForm(e) {
     e.preventDefault();
