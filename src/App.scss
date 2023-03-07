@@ -1,132 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   border: none;
-  outline: none;
-  font-family: 'Montserrat', sans-serif;
-
-  @media screen and (max-width: 700px) {
-    text-align: center;
-  }
-}
-
-*,
-*::before,
-*::after {
   box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(82, 87, 94);
+  list-style: none;
 }
 
-::-webkit-scrollbar {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
-  width: 10px;
-}
-
-::-webkit-scrollbar-button {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.384);
-  border-radius: 50px;
+::placeholder {
+  color: rgb(170, 170, 170);
 }
 
 body {
-  /*  background-color: rgb(32, 32, 32); */
-  background-color: rgb(33, 76, 105);
+  background-color: aliceblue;
 
-  button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.541);
-    color: aliceblue;
-    transition: all 0.2s ease;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 25px;
-    }
+  .title {
+    padding: 15px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
   }
 
-  .app {
-    display: block;
-    height: 60vh;
-    width: 60%;
-    margin: 80px auto 10px auto;
+  button,
+  input {
+    background-color: transparent;
+    color: inherit;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+}
+
+.navigation {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  backdrop-filter: blur(3px);
+  color: black;
+  z-index: 10;
+
+  * {
+    font-weight: bold;
+  }
+  .active {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+  }
+}
+
+.container {
+  width: 700px;
+  overflow-x: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+
+  input {
+    font-size: 18px;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.8);
     padding: 20px;
-    overflow-y: scroll;
+    width: 100%;
+  }
 
-    @media screen and (max-width: 700px) {
-      width: 90%;
+  button {
+    margin: 30px auto 0;
+    font-size: 18px;
+    color: aliceblue;
+    background-color: rgb(33, 76, 214);
+    border-radius: 5px;
+    width: 300px;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
     }
 
-    article {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.384);
-      padding: 10px;
+    &:hover {
+      background-color: rgba(33, 75, 214, 0.863);
+    }
+  }
+}
+
+ul {
+  width: 700px;
+
+  li {
+    background-color: rgb(33, 76, 214);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
+    * {
       color: aliceblue;
-      border-radius: 5px;
-      margin: 10px 0;
-
-      @media screen and (max-width: 700px) {
-        flex-direction: column;
-        gap: 15px 0;
-      }
-
-      span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0 10px;
-      }
-
-      p {
-        cursor: pointer;
-      }
-
-      input[type='checkbox'] {
-        cursor: pointer;
-      }
-
-      input {
-        padding: 8px;
-        border-radius: 5px;
-      }
     }
 
-    form {
-      position: absolute;
-      top: 80%;
-      left: 50%;
-      transform: translate(-50%, 0);
-      display: flex;
-      gap: 10px;
-
-      @media screen and (max-width: 600px) {
-        flex-direction: column;
-        width: 90%;
-      }
-
-      span {
-        position: relative;
-        top: 50px;
-        left: 22%;
-        color: aliceblue;
-
-        @media screen and (max-width: 600px) {
-          position: initial;
-        }
-      }
-
-      input {
-        padding: 8px;
-        border-radius: 5px;
-      }
+    svg {
+      margin: 0 5px;
+      font-size: 18px;
+      cursor: pointer;
     }
+  }
+}
+
+.links {
+  position: fixed;
+  bottom: 20px;
+  left: 80%;
+  overflow: hidden;
+  backdrop-filter: blur(3px);
+  color: black;
+
+  * {
+    margin: 0 5px;
+    font-size: 20px;
   }
 }

@@ -1,6 +1,14 @@
 import React, { useReducer } from 'react';
 
-export const Context = React.createContext([]);
+export const Context = React.createContext([
+  {
+    id: crypto.randomUUID(),
+    title: 'learn another language',
+    description: 'learning another language is interesting',
+    complete: true,
+  },
+]);
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
